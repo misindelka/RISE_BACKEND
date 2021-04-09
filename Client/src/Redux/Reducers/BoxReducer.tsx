@@ -9,8 +9,8 @@ import {
 	REMOVE_FROM_BOX,
 	INCREASE_PRODUCT_AMOUNT,
 	DECREASE_PRODUCT_AMOUNT,
-	COUNT_FINAL_PRICE
-} from '../../constants/ActionTypes';
+	COUNT_FINAL_PRICE,
+} from '../../constants/actionTypes';
 
 interface IProductTypes {
 	[x: string]: unknown;
@@ -34,7 +34,7 @@ interface productState {
 
 const initialStateValue = {
 	data: [],
-	finalPrice: []
+	finalPrice: [],
 };
 
 // eslint-disable-next-line consistent-return
@@ -43,17 +43,17 @@ const BoxReducer = (state: productState = initialStateValue, action) => {
 		case ADD_TO_BOX:
 			{
 				const isProductInBox = state.data.some(
-					product => product._id === action.product._id
+					(product) => product._id === action.product._id
 				);
 				const addProduct = {
 					...action.product,
 					totalPrice: action.product.price,
-					amount: 1
+					amount: 1,
 				};
 				if (!isProductInBox) {
 					return {
 						...state,
-						data: [...state.data, addProduct]
+						data: [...state.data, addProduct],
 					};
 				}
 			}
@@ -61,28 +61,30 @@ const BoxReducer = (state: productState = initialStateValue, action) => {
 		case REMOVE_FROM_BOX: {
 			return {
 				...state,
-				data: state.data.filter(product => action.product._id !== product._id)
+				data: state.data.filter(
+					(product) => action.product._id !== product._id
+				),
 			};
 		}
 		case INCREASE_PRODUCT_AMOUNT: {
 			return {
 				...state,
-				data: state.data.map(product =>
+				data: state.data.map((product) =>
 					product._id === action.product._id
 						? {
 								...product,
 								amount: product.amount + 1,
 								totalPrice:
-									product.price + action.product.price * action.product.amount
+									product.price + action.product.price * action.product.amount,
 						  }
 						: product
-				)
+				),
 			};
 		}
 		case DECREASE_PRODUCT_AMOUNT: {
 			return {
 				...state,
-				data: state.data.map(product =>
+				data: state.data.map((product) =>
 					product._id === action.product._id
 						? {
 								...product,
@@ -93,10 +95,10 @@ const BoxReducer = (state: productState = initialStateValue, action) => {
 										: // eslint-disable-next-line operator-linebreak
 										  // eslint-disable-next-line operator-linebreak
 										  action.product.price * action.product.amount -
-										  product.price
+										  product.price,
 						  }
 						: product
-				)
+				),
 			};
 		}
 		case COUNT_FINAL_PRICE: {
@@ -105,7 +107,7 @@ const BoxReducer = (state: productState = initialStateValue, action) => {
 				finalPrice: state.data.reduce<number>(
 					(acc, product) => acc + product.totalPrice,
 					0
-				)
+				),
 			};
 		}
 	}

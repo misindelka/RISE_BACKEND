@@ -1,15 +1,15 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import styled from 'styled-components';
-import About from './Pages/About/index';
-import Faq from './Pages/FAQ/index';
-import Contacts from './Pages/Contact/index';
-import Gallery from './Pages/Gallery/index';
-import Products from './Modules/Products/index';
-import Box from './Modules/Box/index';
-import Auth from './Modules/auth/index';
-import Summary from './Modules/Box/Summary/index';
-import Order from './Modules/Box/Order/index';
+import About from './pages/about/index';
+import Faq from './pages/faq/index';
+import Contacts from './pages/contact/index';
+import Gallery from './pages/gallery/index';
+import Products from './modules/products/index';
+import Box from './modules/box/index';
+import Auth from './modules/auth/index';
+import Summary from './modules/box/summary/index';
+import Order from './modules/box/order/index';
 
 const Placeholder = styled.div`
 	align-items: center;
@@ -30,54 +30,54 @@ const routes = [
 	{
 		path: '/About',
 		component: About,
-		routeName: 'About'
+		routeName: 'About',
 	},
 	{
 		path: '/Faq',
 		component: Faq,
-		routeName: 'Faq'
+		routeName: 'Faq',
 	},
 	{
 		path: '/Gallery',
 		component: Gallery,
-		routeName: 'Gallery'
+		routeName: 'Gallery',
 	},
 	{
 		path: '/Contacts',
 		component: Contacts,
-		routeName: 'Contacts'
+		routeName: 'Contacts',
 	},
 	{
 		path: '/Box',
 		component: Box,
-		routeName: 'Box'
+		routeName: 'Box',
 	},
 	{
 		path: '/Summary',
 		component: Summary,
-		routeName: 'Summary'
+		routeName: 'Summary',
 	},
 	{
 		path: '/Order',
 		component: Order,
-		routeName: 'Order'
+		routeName: 'Order',
 	},
 	{
 		path: '/Auth',
 		component: Auth,
-		routeName: 'Auth'
+		routeName: 'Auth',
 	},
 	{
 		path: '/:category_id',
 		component: Products,
-		routeName: 'Category'
+		routeName: 'Category',
 	},
 
 	{
 		path: '/OtherComponents',
-		component: () => <ComponentPlaceholder label="OtherComponents" />,
-		routeName: 'OtherComponents'
-	}
+		component: () => <ComponentPlaceholder label='OtherComponents' />,
+		routeName: 'OtherComponents',
+	},
 ];
 
 export { routes as default };

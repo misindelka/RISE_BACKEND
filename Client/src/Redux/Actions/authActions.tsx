@@ -1,7 +1,7 @@
-import { AUTH } from '../../constants/ActionTypes';
+import { AUTH } from '../../constants/actionTypes';
 import * as api from '../../api/auth';
 
-export const signin = (userData, history) => async dispatch => {
+export const signin = (userData, history) => async (dispatch) => {
 	try {
 		const { data } = await api.signIn(userData);
 
@@ -13,7 +13,7 @@ export const signin = (userData, history) => async dispatch => {
 	}
 };
 
-export const signup = (userData, history) => async dispatch => {
+export const signup = (userData, history) => async (dispatch) => {
 	try {
 		const { data } = await api.signUp(userData);
 		alert('auth action signup');

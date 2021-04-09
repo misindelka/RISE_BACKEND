@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { contactApi } from '../../api/pagesApis';
-import { Paper, PageWrapper } from '../../Styles/Components';
+import { Paper, PageWrapper } from '../../styles/components';
 
 const Contacts: React.FC = () => {
 	const [data, setData] = useState<any>([]);
@@ -9,7 +9,7 @@ const Contacts: React.FC = () => {
 	useEffect(() => {
 		axios
 			.get(contactApi)
-			.then(res => {
+			.then((res) => {
 				setData(res.data);
 			})
 			.catch(() => console.log('! abouts not recieved !'));

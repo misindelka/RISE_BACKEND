@@ -5,13 +5,13 @@ import Tippy from '@tippy.js/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tippy.js/dist/tippy.css';
 import { useTranslation } from 'react-i18next';
-import { HowerWrapper } from '../../../Styles/Components';
-import { IProductTypes } from '../../../Types/types';
-import { Column, Row, ProductImage } from '../Styles/Components';
+import { HowerWrapper } from '../../../styles/components';
+import { IProductTypes } from '../../../types/types';
+import { Column, Row, ProductImage } from '../styles/boxComponents';
 import {
 	boxLessOfProduct,
 	boxMoreOfProduct,
-	boxRemoveProduct
+	boxRemoveProduct,
 } from '../../../tippy/labels';
 
 interface IProps {
@@ -27,31 +27,31 @@ const ShoppingBox: React.FC<IProps> = ({
 	remove,
 	decrease,
 	increase,
-	finalPrice
+	finalPrice,
 }: IProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
 		{
 			label: `${t('boxTableProductName')}`,
-			fieldName: 'name'
+			fieldName: 'name',
 		},
 		{
 			label: `${t('boxTableProductCategory')}`,
-			fieldName: 'category'
+			fieldName: 'category',
 		},
 		{
 			label: `${t('boxTableProductPrice')}`,
-			fieldName: 'price'
+			fieldName: 'price',
 		},
 		{
 			label: `${t('boxTableTotaLProductPrice')}`,
-			fieldName: 'totalPrice'
+			fieldName: 'totalPrice',
 		},
 		{
 			label: `${t('boxTableTotalProductAmount')}`,
-			fieldName: 'amount'
-		}
+			fieldName: 'amount',
+		},
 	];
 
 	return (

@@ -7,8 +7,8 @@ import {
 	SortSelect,
 	SearchProduct,
 	SContainer,
-	LabelSmall
-} from '../Styles/Components';
+	LabelSmall,
+} from '../styles/modulesComponents';
 
 const SearchBar: React.FC<any> = ({ handleSort, handleSearch }) => {
 	const { t } = useTranslation();
@@ -19,18 +19,18 @@ const SearchBar: React.FC<any> = ({ handleSort, handleSearch }) => {
 				<IoSearchOutline size={15} />
 				<SearchProduct
 					placeholder={t('searchProduct')}
-					type="text"
+					type='text'
 					onChange={handleSearch}
 				/>
 			</SContainer>
 
 			<SContainer>
 				<LabelSmall>{t('productsSortBy')}</LabelSmall>
-				<SortSelect defaultValue="sort" onChange={handleSort}>
-					<option value="byPrice">{t('sortByPrice')}</option>
-					<option value="byName">{t('sortByName')}</option>
-					<option value="byDate">{t('sortByDataAdded')}</option>
-					<option value="byOrigin">{t('sortByOrigin')}</option>
+				<SortSelect defaultValue='sort' onChange={handleSort}>
+					<option value='byPrice'>{t('sortByPrice')}</option>
+					<option value='byName'>{t('sortByName')}</option>
+					<option value='byDate'>{t('sortByDataAdded')}</option>
+					<option value='byOrigin'>{t('sortByOrigin')}</option>
 				</SortSelect>
 			</SContainer>
 		</SortBar>

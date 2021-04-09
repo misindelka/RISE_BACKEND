@@ -6,9 +6,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { signin, signup } from '../../Redux/Actions/authActions';
+import { signin, signup } from '../../redux/actions/authActions';
 import AuthForm from './authForm';
-import { PageWrapper } from '../../Styles/Components';
+import { PageWrapper } from '../../styles/components';
 
 interface IProps {
 	userData: {
@@ -27,7 +27,7 @@ interface IProps {
 const initialUserValue = {
 	email: '',
 	password: '',
-	confirmPassword: ''
+	confirmPassword: '',
 };
 
 const Auth: React.FC<IProps> = () => {
@@ -38,24 +38,24 @@ const Auth: React.FC<IProps> = () => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
-	const handleSubmit = e => {
+	const handleSubmit = (e) => {
 		dispatch(signin(userData, history));
 		e.preventDefault();
 	};
 
-	const handleInputChange = event => {
+	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 		setUserData({ ...userData, [name]: value });
 	};
 
-	const handleSignUp = e => {
+	const handleSignUp = (e) => {
 		if (userData.password === userData.confirmPassword) {
 			dispatch(signup(userData, history));
 			e.preventDefault();
 		} else setArePasswordSame(false);
 	};
 
-	const handleSignUpButton = e => {
+	const handleSignUpButton = (e) => {
 		if (!signUp) {
 			setSignUp(true);
 		}

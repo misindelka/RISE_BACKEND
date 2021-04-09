@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { IUser } from '../../../Types/types';
-import { LinkTo } from '../../../Styles/Components';
-import { NavContainer, Row } from '../../Styles/Components';
+import { IUser } from '../../../types/types';
+import { LinkTo } from '../../../styles/components';
+import { NavContainer, Row } from '../../styles/modulesComponents';
 
 const FormContainer = styled.div`
 	align-items: center;
@@ -17,25 +17,25 @@ const FormWrapper = styled.form`
 `;
 
 const FieldContainer = styled.div`
-	padding: ${props => props.theme.secondaryPadding};
+	padding: ${(props) => props.theme.secondaryPadding};
 `;
 
 const Field = styled.input`
-	background: ${props => props.theme.cardTransparencyGrey};
-	height: ${props => props.theme.primaryInputHeight};
-	width: ${props => props.theme.primaryInputField};
+	background: ${(props) => props.theme.cardTransparencyGrey};
+	height: ${(props) => props.theme.primaryInputHeight};
+	width: ${(props) => props.theme.primaryInputField};
 `;
 
 const OrderButton = styled.button`
 	background: none;
 	border: none;
-	color: ${props => props.theme.primaryWhite};
+	color: ${(props) => props.theme.primaryWhite};
 	cursor: pointer;
-	font-size: ${props => props.theme.primaryFontSize};
-	height: ${props => props.theme.primaryInputHeight};
+	font-size: ${(props) => props.theme.primaryFontSize};
+	height: ${(props) => props.theme.primaryInputHeight};
 	justify-content: center;
-	margin-top: ${props => props.theme.primaryInputHeight};
-	width: ${props => props.theme.primaryInputField};
+	margin-top: ${(props) => props.theme.primaryInputHeight};
+	width: ${(props) => props.theme.primaryInputField};
 	:hover {
 		cursor: pointer;
 		font-weight: bold;
@@ -56,13 +56,13 @@ const initialUserValue = {
 	city: '',
 	zipCode: '',
 	email: '',
-	phoneNumber: ''
+	phoneNumber: '',
 };
 
 const OrderFrom: React.FC<IProps> = ({ submitUser }: IProps) => {
 	const [user, setUser] = useState(initialUserValue);
 
-	const handleInputChange = event => {
+	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 
 		setUser({ ...user, [name]: value });
@@ -73,36 +73,36 @@ const OrderFrom: React.FC<IProps> = ({ submitUser }: IProps) => {
 	const orderConfig = [
 		{
 			label: `${t('orderFormName')}`,
-			fieldName: 'name'
+			fieldName: 'name',
 		},
 		{
 			label: `${t('orderFormSurname')}`,
-			fieldName: 'surname'
+			fieldName: 'surname',
 		},
 		{
 			label: `${t('orderFormStreetName')}`,
-			fieldName: 'street'
+			fieldName: 'street',
 		},
 		{
 			label: `${t('orderFormStreetNumber')}`,
-			fieldName: 'stNumber'
+			fieldName: 'stNumber',
 		},
 		{
 			label: `${t('orderFormCityName')}`,
-			fieldName: 'city'
+			fieldName: 'city',
 		},
 		{
 			label: `${t('orderFormZipCode')}`,
-			fieldName: 'zipCode'
+			fieldName: 'zipCode',
 		},
 		{
 			label: `${t('orderFormUserMail')}`,
-			fieldName: 'email'
+			fieldName: 'email',
 		},
 		{
 			label: `${t('orderFormUserNumber')}`,
-			fieldName: 'phoneNumber'
-		}
+			fieldName: 'phoneNumber',
+		},
 	];
 
 	return (
@@ -112,17 +112,16 @@ const OrderFrom: React.FC<IProps> = ({ submitUser }: IProps) => {
 			</Row>
 
 			<FormWrapper
-				onSubmit={event => {
+				onSubmit={(event) => {
 					event.preventDefault();
 					submitUser(user);
 					setUser(initialUserValue);
-				}}
-			>
+				}}>
 				{orderConfig.map((column, i) => (
 					<FieldContainer key={i}>
 						<h4>{column.label}</h4>
 						<Field
-							type="text"
+							type='text'
 							name={column.fieldName}
 							value={user[column.fieldName]}
 							onChange={handleInputChange}
@@ -131,10 +130,10 @@ const OrderFrom: React.FC<IProps> = ({ submitUser }: IProps) => {
 				))}
 
 				<NavContainer>
-					<LinkTo to="/Box">
+					<LinkTo to='/Box'>
 						<h4>{t('boxBackToShoppingButton')}</h4>
 					</LinkTo>
-					<LinkTo to="/Summary">
+					<LinkTo to='/Summary'>
 						<h4>{t('boxSummaryButton')}</h4>
 					</LinkTo>
 					<OrderButton>

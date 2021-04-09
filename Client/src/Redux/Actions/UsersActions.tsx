@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { ADD_USER } from '../../constants/ActionTypes';
+import { ADD_USER } from '../../constants/actionTypes';
 
-export const addUser = user => async dispatch => {
+export const addUser = (user) => async (dispatch) => {
 	try {
 		await axios.post('http://localhost:4000/rise/users', user);
 		console.log('usersActions dsip', user);

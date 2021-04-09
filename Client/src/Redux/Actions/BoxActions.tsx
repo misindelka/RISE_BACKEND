@@ -3,29 +3,29 @@ import {
 	INCREASE_PRODUCT_AMOUNT,
 	REMOVE_FROM_BOX,
 	DECREASE_PRODUCT_AMOUNT,
-	COUNT_FINAL_PRICE
-} from '../../constants/ActionTypes';
+	COUNT_FINAL_PRICE,
+} from '../../constants/actionTypes';
 
-export const addToBox = product => ({
+export const addToBox = (product) => ({
 	type: ADD_TO_BOX,
-	product
+	product,
 });
 
-export const removeProduct = product => ({
+export const removeProduct = (product) => ({
 	type: REMOVE_FROM_BOX,
-	product
+	product,
 });
 
-export const increaseAmount = product => ({
+export const increaseAmount = (product) => ({
 	type: INCREASE_PRODUCT_AMOUNT,
-	product
+	product,
 });
 
-export const decreaseAmount = product => ({
+export const decreaseAmount = (product) => ({
 	type: DECREASE_PRODUCT_AMOUNT,
-	product
+	product,
 });
 
 export const countFinalPrice = () => ({
-	type: COUNT_FINAL_PRICE
+	type: COUNT_FINAL_PRICE,
 });

@@ -1,9 +1,9 @@
 //  BOX
 
-export const BoxIsEmptyLabelSk = 'Bednička je prázdná';
+export const boxIsEmptyLabelSk = 'Bednička je prázdná';
 
 // Products
 
 // eslint-disable-next-line operator-linebreak
-export const NoProductsInCategorySk =
+export const noProductsInCategorySk =
 	'V tejto Kategorii nejsou žiadné produkty';

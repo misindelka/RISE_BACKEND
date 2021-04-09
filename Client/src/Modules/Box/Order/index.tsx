@@ -2,13 +2,13 @@
 /* eslint-disable import/namespace */
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import OrderFrom from './OrderForm';
-import { countFinalPrice } from '../../../Redux/Actions/BoxActions';
-import { addUser } from '../../../Redux/Actions/UsersActions';
-import { IUser } from '../../../Types/types';
+import OrderFrom from './orderForm';
+import { countFinalPrice } from '../../../redux/actions/boxActions';
+import { addUser } from '../../../redux/actions/usersActions';
+import { IUser } from '../../../types/types';
 import BoxBar from '../BoxBar';
-import { Paper, ContentWrapper } from '../../../Styles/Components';
-import { ShopWrapper } from '../../Styles/Components';
+import { Paper, ContentWrapper } from '../../../styles/components';
+import { ShopWrapper } from '../../styles/modulesComponents';
 
 interface IProps {
 	user: IUser;
@@ -22,7 +22,7 @@ const Order: React.FC<IProps> = () => {
 		dispatch(countFinalPrice());
 	});
 
-	const submitUser = user => {
+	const submitUser = (user) => {
 		dispatch(addUser(user));
 		console.log(user, 'disp ORDER component');
 	};

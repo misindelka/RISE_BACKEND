@@ -1,9 +1,9 @@
 /* eslint-disable consistent-return */
-import { ADD_USER } from '../../constants/ActionTypes';
-import { IUser } from '../../Types/types';
+import { ADD_USER } from '../../constants/actionTypes';
+import { IUser } from '../../types/types';
 
 const initialStateValue = {
-	users: []
+	users: [],
 };
 
 interface IState {
@@ -15,12 +15,12 @@ const UsersReducer = (state: IState = initialStateValue, action) => {
 		case ADD_USER:
 			{
 				const compareUser = state.users.some(
-					user => user.name === action.user.name
+					(user) => user.name === action.user.name
 				);
 				if (!compareUser) {
 					return {
 						...state,
-						users: [...state.users, action.user]
+						users: [...state.users, action.user],
 					};
 				}
 				console.log('user is registered');

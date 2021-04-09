@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useGoogleLogin } from 'react-google-login';
 import { useTranslation } from 'react-i18next';
-import { ConfirmButton } from './styles/Components';
+import { ConfirmButton } from './styles/authComponents';
 import { clientId } from '../../api/googleApis';
 
 const GoogleSignIn = () => {
@@ -12,7 +12,7 @@ const GoogleSignIn = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const onSuccess = async res => {
+	const onSuccess = async (res) => {
 		const result = res?.profileObj;
 		const token = res?.tokenId;
 
@@ -30,7 +30,7 @@ const GoogleSignIn = () => {
 	const { signIn } = useGoogleLogin({
 		onSuccess,
 		onFailure,
-		clientId
+		clientId,
 	});
 
 	return (

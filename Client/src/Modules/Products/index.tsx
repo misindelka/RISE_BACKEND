@@ -4,16 +4,16 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ProductsBar from './ProductsBar';
-import ProductCard from './Cards/ProductCard';
+import ProductCard from './cards/productCard';
 import SearchBar from './searchBar';
-import NoProducts from './Cards/NoProducts';
+import NoProducts from './cards/noProducts';
 import {
 	ShopWrapper,
 	ProductsWrapper,
-	ContentContainer
-} from '../Styles/Components';
-import { IProductTypes, TAddToBox } from '../../Types/types';
-import { addToBox } from '../../Redux/Actions/BoxActions';
+	ContentContainer,
+} from '../styles/modulesComponents';
+import { IProductTypes, TAddToBox } from '../../types/types';
+import { addToBox } from '../../redux/actions/boxActions';
 
 interface IProps {
 	product: IProductTypes;
@@ -21,8 +21,8 @@ interface IProps {
 	match: any;
 }
 
-const Products: React.FC<IProps> = props => {
-	const productsData = useSelector(state => state.products.data);
+const Products: React.FC<IProps> = (props) => {
+	const productsData = useSelector((state) => state.products.data);
 	const [search, setSearch] = useState('');
 	const [sortedProducts, setSortedProducts] = useState<any>();
 
@@ -31,19 +31,19 @@ const Products: React.FC<IProps> = props => {
 	const categoryId = props.match.params.category_id;
 	const dispatch = useDispatch();
 
-	const addProductToBox: TAddToBox = p => {
+	const addProductToBox: TAddToBox = (p) => {
 		dispatch(addToBox(p));
 	};
 
-	const handleSeach = e => {
+	const handleSeach = (e) => {
 		setSearch(e.target.value);
 	};
 
 	const filteredProducts = products.filter(
-		product => product.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+		(product) => product.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
 	);
 
-	const handleSort = e => {
+	const handleSort = (e) => {
 		const sortBy = e.target.value;
 
 		if (sortBy === 'byPrice') {
@@ -71,8 +71,8 @@ const Products: React.FC<IProps> = props => {
 	};
 
 	const productsSlug = products
-		.map(i => i.slug)
-		.some(slug => slug === categoryId);
+		.map((i) => i.slug)
+		.some((slug) => slug === categoryId);
 
 	return (
 		<ShopWrapper>

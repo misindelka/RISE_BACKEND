@@ -2,12 +2,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { countFinalPrice } from '../../../Redux/Actions/BoxActions';
-import { IProductTypes } from '../../../Types/types';
+import { countFinalPrice } from '../../../redux/actions/boxActions';
+import { IProductTypes } from '../../../types/types';
 import BoxBar from '../BoxBar';
 import SummaryTable from './SummaryTable';
-import { Paper, ContentWrapper, LinkTo } from '../../../Styles/Components';
-import { ShopWrapper, NavContainer } from '../../Styles/Components';
+import { Paper, ContentWrapper, LinkTo } from '../../../styles/components';
+import { ShopWrapper, NavContainer } from '../../styles/modulesComponents';
 
 interface IProps {
 	finalPrice: number;
@@ -18,9 +18,9 @@ interface IProps {
 
 const BoxSummary: React.FC<IProps> = () => {
 	const dispatch = useDispatch();
-	const productsInBox = useSelector(state => state.productsInBox.data);
+	const productsInBox = useSelector((state) => state.productsInBox.data);
 	const finalPrice = useSelector<number>(
-		state => state.productsInBox.finalPrice
+		(state) => state.productsInBox.finalPrice
 	);
 
 	const { t } = useTranslation();
@@ -35,10 +35,10 @@ const BoxSummary: React.FC<IProps> = () => {
 				<Paper>
 					<SummaryTable productsInBox={productsInBox} finalPrice={finalPrice} />
 					<NavContainer>
-						<LinkTo to="/Box">
+						<LinkTo to='/Box'>
 							<h4>{t('boxBackToBoxButton')}</h4>
 						</LinkTo>
-						<LinkTo to="/Order">
+						<LinkTo to='/Order'>
 							<h4>{t('boxContinueToOrderButton')}</h4>
 						</LinkTo>
 					</NavContainer>

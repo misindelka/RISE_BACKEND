@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { categoriesApi } from '../../api/index';
-import { BarWrapper, LinkTo } from '../../Styles/Components';
+import { BarWrapper, LinkTo } from '../../styles/components';
 
 type categories = { id: number; slug: string; name: string };
 
 const ProductsBar: React.FC = () => {
 	const [categories, setCategories] = useState<categories[]>([]);
 	useEffect(() => {
-		axios.get(categoriesApi).then(res => {
+		axios.get(categoriesApi).then((res) => {
 			setCategories(res.data);
 		});
 	}, []);
@@ -18,11 +18,10 @@ const ProductsBar: React.FC = () => {
 			{categories.map((category, i) => (
 				<LinkTo
 					activeStyle={{
-						fontWeight: 'bold'
+						fontWeight: 'bold',
 					}}
 					key={i}
-					to={category.slug}
-				>
+					to={category.slug}>
 					{category.name}
 				</LinkTo>
 			))}
