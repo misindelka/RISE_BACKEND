@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
-import { IFaq } from '../../Types/types';
+import { IFaq } from '../../types/types';
 
 const FaqCard = styled.div`
-	background: ${props => props.theme.modalTransparentGrey};
+	background: ${(props) => props.theme.modalTransparentGrey};
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px 1px
-		${props => props.theme.modalTransparencySecondaryGrey};
-	color: ${props => props.theme.primaryBoxShadow};
+		${(props) => props.theme.modalTransparencySecondaryGrey};
+	color: ${(props) => props.theme.primaryBoxShadow};
 	display: flex;
-	height: ${props => props.theme.faqCardSize};
+	height: ${(props) => props.theme.faqCardSize};
 	justify-content: space-between;
-	margin: ${props => props.theme.primaryPadding};
+	margin: ${(props) => props.theme.primaryPadding};
 	opacity: 0.9;
 	overflow: scroll;
-	padding: ${props => props.theme.primaryPadding};
-	width: ${props => props.theme.bigCard};
+	padding: ${(props) => props.theme.primaryPadding};
+	width: ${(props) => props.theme.bigCard};
 	:hover {
-		background: ${props => props.theme.modalTransparencySecondaryGrey};
+		background: ${(props) => props.theme.modalTransparencySecondaryGrey};
 		cursor: pointer;
 		opacity: 1.6;
 	}

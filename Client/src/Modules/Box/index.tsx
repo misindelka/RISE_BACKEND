@@ -6,16 +6,16 @@ import {
 	removeProduct,
 	increaseAmount,
 	decreaseAmount,
-	countFinalPrice
-} from '../../Redux/Actions/BoxActions';
-import { IProductTypes } from '../../Types/types';
+	countFinalPrice,
+} from '../../redux/actions/boxActions';
+import { IProductTypes } from '../../types/types';
 import BoxBar from './BoxBar';
-import BoxIsEmpty from './BoxIsEmpty/index';
-import ShoppingBox from './ShoppingBox/index';
-import ShopLink from '../../Links/shopLink';
-import { Paper, ContentWrapper, LinkTo } from '../../Styles/Components';
-import { NavContainer, ShopWrapper } from '../Styles/Components';
-import { ShopNavContainer } from './Styles/Components';
+import BoxIsEmpty from './boxIsEmpty/index';
+import ShoppingBox from './shoppingBox/index';
+import ShopLink from '../../linkComponents/shopLink';
+import { Paper, ContentWrapper, LinkTo } from '../../styles/components';
+import { NavContainer, ShopWrapper } from '../styles/modulesComponents';
+import { ShopNavContainer } from './styles/boxComponents';
 
 interface IProps {
 	removeProductFromBox: (p: IProductTypes) => void;
@@ -25,8 +25,8 @@ interface IProps {
 
 const Box: React.FC<IProps> = () => {
 	const dispatch = useDispatch();
-	const productsInBox = useSelector(state => state.productsInBox.data);
-	const finalPrice = useSelector(state => state.productsInBox.finalPrice);
+	const productsInBox = useSelector((state) => state.productsInBox.data);
+	const finalPrice = useSelector((state) => state.productsInBox.finalPrice);
 
 	const { t } = useTranslation();
 
@@ -34,15 +34,15 @@ const Box: React.FC<IProps> = () => {
 		dispatch(countFinalPrice());
 	});
 
-	const remove = p => {
+	const remove = (p) => {
 		dispatch(removeProduct(p));
 	};
 
-	const increase = p => {
+	const increase = (p) => {
 		dispatch(increaseAmount(p));
 	};
 
-	const decrease = p => {
+	const decrease = (p) => {
 		dispatch(decreaseAmount(p));
 	};
 	return (
@@ -64,7 +64,7 @@ const Box: React.FC<IProps> = () => {
 									<ShopLink />
 									<h4>{t('boxBackToShoppingButton')}</h4>
 								</ShopNavContainer>
-								<LinkTo to="/Summary">
+								<LinkTo to='/Summary'>
 									<div>
 										<h4>{t('boxSummaryButton')}</h4>
 									</div>

@@ -12,9 +12,9 @@ import {
 	FieldContainer,
 	FormContainer,
 	ConfirmButton,
-	RowWrapper
-} from './styles/Components';
-import { PageWrapper, Paper } from '../../Styles/Components';
+	RowWrapper,
+} from './styles/authComponents';
+import { PageWrapper, Paper } from '../../styles/components';
 
 interface IProps {
 	userData: {
@@ -37,7 +37,7 @@ const AuthForm: React.FC<IProps> = ({
 	arePasswordsSame,
 	handleSubmit,
 	handleSignUpButton,
-	setSignUp
+	setSignUp,
 }) => {
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -50,14 +50,14 @@ const AuthForm: React.FC<IProps> = ({
 		signIn: [
 			{
 				label: `${t('authEmail')}`,
-				fieldName: 'email'
+				fieldName: 'email',
 			},
 			{
 				label: `${t('authPassword')}`,
-				fieldName: 'password'
-			}
+				fieldName: 'password',
+			},
 		],
-		singUp: [{ label: `${t('authPassword')}`, fieldName: 'confirmPassword' }]
+		singUp: [{ label: `${t('authPassword')}`, fieldName: 'confirmPassword' }],
 	};
 
 	return (
@@ -104,7 +104,7 @@ const AuthForm: React.FC<IProps> = ({
 											<p>{column.label} :</p>
 										</RowWrapper>
 										<Field
-											type="text"
+											type='text'
 											name={column.fieldName}
 											value={userData[column.fieldName]}
 											onChange={handleInputChange}

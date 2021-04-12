@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-import BoxReducer from './Reducers/BoxReducer';
-import ProductsReducer from './Reducers/ProductsReducer';
-import AuthReducer from './Reducers/AuthReducer';
-import UsersReducer from './Reducers/UsersReducer';
+import BoxReducer from './reducers/boxReducer';
+import ProductsReducer from './reducers/productsReducer';
+import AuthReducer from './reducers/authReducer';
+import UsersReducer from './reducers/usersReducer';
 
 const rootReducer = combineReducers({
 	products: ProductsReducer,
 	productsInBox: BoxReducer,
 	user: AuthReducer,
-	usersData: UsersReducer
+	usersData: UsersReducer,
 });
 
 export default rootReducer;

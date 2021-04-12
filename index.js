@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import products from './routes/products.js';
 import pages from './routes/pages.js';
-import email from './routes/email.js';
+// import email from './routes/email.js';
 import { mongoURI as db } from './config/keys.js';
 import user from './routes/user.js';
 import users from './routes/users.js';
@@ -18,7 +18,7 @@ mongoose
 app.use(express.json(), cors());
 app.use(express.urlencoded({ extended: false, limit: '20mb' }));
 
-app.use(pages, email, products, users);
+app.use(pages, products, users);
 app.use('/user', user);
 
 const port = process.env.PORT || 4000;

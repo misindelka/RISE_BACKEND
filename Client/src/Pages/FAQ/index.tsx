@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { faqApi, faqFormApi } from '../../api/pagesApis';
-import FaqForm from './FaqForm';
-import { ContentWrapper, PageWrapper, Paper } from '../../Styles/Components';
+import FaqForm from './faqForm';
+import { ContentWrapper, PageWrapper, Paper } from '../../styles/components';
 
 const Faq: React.FC = () => {
 	const [data, setData] = useState<any>([]);
@@ -11,7 +11,7 @@ const Faq: React.FC = () => {
 	useEffect(() => {
 		axios
 			.get(faqApi)
-			.then(res => {
+			.then((res) => {
 				setData(res.data);
 			})
 			.catch(() => console.log('! abouts not recieved !'));
@@ -22,7 +22,7 @@ const Faq: React.FC = () => {
 	useEffect(() => {
 		axios
 			.get(faqFormApi)
-			.then(res => {
+			.then((res) => {
 				setTitle(res.data);
 			})
 			.catch(() => console.log('! abouts not recieved !'));

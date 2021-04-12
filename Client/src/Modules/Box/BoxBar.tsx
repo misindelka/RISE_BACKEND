@@ -1,30 +1,27 @@
 import React from 'react';
-import { BarWrapper, LinkTo } from '../../Styles/Components';
+import { BarWrapper, LinkTo } from '../../styles/components';
 
 const BoxBar = () => (
 	<BarWrapper>
 		<LinkTo
 			activeStyle={{
-				fontWeight: 'bold'
+				fontWeight: 'bold',
 			}}
-			to="./Box"
-		>
+			to='./Box'>
 			Bednička
 		</LinkTo>
 		<LinkTo
 			activeStyle={{
-				fontWeight: 'bold'
+				fontWeight: 'bold',
 			}}
-			to="./Summary"
-		>
+			to='./Summary'>
 			Rekapitulácia
 		</LinkTo>
 		<LinkTo
 			activeStyle={{
-				fontWeight: 'bold'
+				fontWeight: 'bold',
 			}}
-			to="./Order"
-		>
+			to='./Order'>
 			Dokončenie Obednávky
 		</LinkTo>
 	</BarWrapper>

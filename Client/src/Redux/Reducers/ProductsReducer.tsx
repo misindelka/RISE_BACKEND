@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import { GET_PRODUCTS } from '../../constants/ActionTypes';
+import { GET_PRODUCTS } from '../../constants/actionTypes';
 
 const initialState = { data: [] };
 
@@ -8,7 +8,7 @@ const ProductsReducer = (state = initialState, action) => {
 		case GET_PRODUCTS:
 			return {
 				...state,
-				data: action.payload
+				data: action.payload,
 			};
 	}
 	return state;

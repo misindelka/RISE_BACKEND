@@ -5,22 +5,22 @@ import Animate, { Flash, FadeOut, FadeIn } from 'animate-css-styled-components';
 import Tippy from '@tippy.js/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tippy.js/dist/tippy.css';
-import ProductDetail from './ProductDetail';
-import { IProductTypes, TAddToBox } from '../../../Types/types';
+import ProductDetail from './productDetail';
+import { IProductTypes, TAddToBox } from '../../../types/types';
 import { addToBoxButton, productIsInBox } from '../../../tippy/labels';
 
 const iconUrl = `${process.env.PUBLIC_URL}/assets/box.png`;
 
 const CardWrapper = styled.div`
-	background: ${props => props.theme.cardTransparencyGrey};
+	background: ${(props) => props.theme.cardTransparencyGrey};
 	border-radius: 4px;
 	box-shadow: 1px 3px 3px 2px #bdbdbd;
 	display: flex;
 	flex-direction: column;
-	height: ${props => props.theme.mediumCardSize};
-	margin: ${props => props.theme.secondaryPadding};
-	padding: ${props => props.theme.secondaryPadding};
-	width: ${props => props.theme.mediumCardSize};
+	height: ${(props) => props.theme.mediumCardSize};
+	margin: ${(props) => props.theme.secondaryPadding};
+	padding: ${(props) => props.theme.secondaryPadding};
+	width: ${(props) => props.theme.mediumCardSize};
 	:hover {
 		cursor: pointer;
 		opacity: 1.3;
@@ -43,17 +43,17 @@ const ContentContainer = styled.div`
 const Title = styled.div`
 	display: flex;
 	flex-direction: row;
-	font-size: ${props => props.theme.secondaryFontSize};
+	font-size: ${(props) => props.theme.secondaryFontSize};
 	font-weight: bold;
 	justify-content: center;
-	padding: ${props => props.theme.smallPadding};
+	padding: ${(props) => props.theme.smallPadding};
 `;
 const Desc = styled.div`
 	display: flex;
 	flex-direction: row;
-	font-size: ${props => props.theme.primaryFontSize};
+	font-size: ${(props) => props.theme.primaryFontSize};
 	justify-content: center;
-	padding: ${props => props.theme.smallPadding};
+	padding: ${(props) => props.theme.smallPadding};
 `;
 const BottomWrapper = styled.div`
 	align-items: center;
@@ -64,11 +64,11 @@ const BottomWrapper = styled.div`
 
 const ShowDetail = styled.div`
 	display: flex;
-	font-size: ${props => props.theme.smallFontSize};
+	font-size: ${(props) => props.theme.smallFontSize};
 	font-weight: bold;
 	justify-content: center;
-	max-width: ${props => props.theme.primaryImgSize};
-	padding: ${props => props.theme.smallPadding};
+	max-width: ${(props) => props.theme.primaryImgSize};
+	padding: ${(props) => props.theme.smallPadding};
 	:hover {
 		cursor: pointer;
 		opacity: 1.3;
@@ -79,7 +79,7 @@ const ShowDetail = styled.div`
 
 const BoxIcon = styled.img`
 	height: 40px;
-	padding: ${props => props.theme.smallPadding};
+	padding: ${(props) => props.theme.smallPadding};
 	:hover {
 		cursor: pointer;
 		opacity: 1.3;
@@ -95,7 +95,7 @@ interface IProps {
 
 const ProductCard: React.FC<IProps> = ({
 	product,
-	addProductToBox
+	addProductToBox,
 }: IProps) => {
 	// eslint-disable-next-line no-unused-vars
 	const [animateAdd, setAnimateAdd] = useState(false);
@@ -128,8 +128,7 @@ const ProductCard: React.FC<IProps> = ({
 								<Animate
 									Animation={[Flash, FadeOut, FadeIn]}
 									duration={['0.8s', '3s', '2s', '0.4s']}
-									delay={['0.2s', '0.1s', '0.5s', '1s']}
-								>
+									delay={['0.2s', '0.1s', '0.5s', '1s']}>
 									<Tippy content={productIsInBox}>
 										<BoxIcon src={iconUrl} />
 									</Tippy>

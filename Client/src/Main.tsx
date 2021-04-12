@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
-import Footer from './Footer';
-import GlobalStyle from './Styles/GlobalStyle';
+import Footer from './footer';
+import GlobalStyle from './styles/globalStyle';
 import routes from './router';
 
-import Header from './Header/index';
-import { getProducts } from './Redux/Actions/ProductsActions';
-import Home from './Pages/Home';
+import Header from './header/index';
+import { getProducts } from './redux/actions/productsActions';
+import Home from './pages/home';
 
 const Main = () => {
 	const dispatch = useDispatch();
@@ -22,8 +22,8 @@ const Main = () => {
 			<Router>
 				<Header />
 				<Switch>
-					<Route key="Home" exact path="/" component={Home} />
-					{routes.map(route => (
+					<Route key='Home' exact path='/' component={Home} />
+					{routes.map((route) => (
 						<Route
 							key={route.path}
 							path={route.path}

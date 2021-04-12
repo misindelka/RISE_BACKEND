@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import './i18n';
-import * as theme from './Styles/Theme';
-import Main from './Main';
-import store from './Redux/store';
+import * as theme from './styles/theme';
+import Main from './main';
+import store from './redux/store';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider theme={theme}>
 			<Provider store={store}>
-				<Suspense fallback="...Loading">
+				<Suspense fallback='...Loading'>
 					<Main />
 				</Suspense>
 			</Provider>

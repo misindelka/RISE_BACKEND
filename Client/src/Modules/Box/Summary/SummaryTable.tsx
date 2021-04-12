@@ -1,9 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { IProductTypes } from '../../../Types/types';
+import { IProductTypes } from '../../../types/types';
 
-import { Row, Column, ProductImage } from '../Styles/Components';
+import { Row, Column, ProductImage } from '../styles/boxComponents';
 
 interface IProps {
 	productsInBox: IProductTypes;
@@ -12,31 +12,31 @@ interface IProps {
 
 const SummaryTable: React.FC<IProps> = ({
 	productsInBox,
-	finalPrice
+	finalPrice,
 }: IProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
 		{
 			label: `${t('boxTableProductName')}`,
-			fieldName: 'name'
+			fieldName: 'name',
 		},
 		{
 			label: `${t('boxTableProductCategory')}`,
-			fieldName: 'category'
+			fieldName: 'category',
 		},
 		{
 			label: `${t('boxTableProductPrice')}`,
-			fieldName: 'price'
+			fieldName: 'price',
 		},
 		{
 			label: `${t('boxTableTotaLProductPrice')}`,
-			fieldName: 'totalPrice'
+			fieldName: 'totalPrice',
 		},
 		{
 			label: `${t('boxTableTotalProductAmount')}`,
-			fieldName: 'amount'
-		}
+			fieldName: 'amount',
+		},
 	];
 
 	return (

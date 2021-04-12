@@ -10,10 +10,10 @@ import { useTranslation } from 'react-i18next';
 import {
 	IoPersonOutline,
 	IoSearchOutline,
-	IoPersonRemoveOutline
+	IoPersonRemoveOutline,
 } from 'react-icons/io5';
 import Tippy from '@tippy.js/react';
-import ShopLink from '../Links/shopLink';
+import ShopLink from '../linkComponents/shopLink';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tippy.js/dist/tippy.css';
@@ -21,7 +21,7 @@ import {
 	shoppingBoxHeaderButton,
 	logInHeaderButton,
 	searchHeaderButton,
-	homeButton
+	homeButton,
 } from '../tippy/labels';
 import {
 	HeadContainer,
@@ -33,11 +33,11 @@ import {
 	Image,
 	CountProductsInBox,
 	CountProductsInBoxText,
-	TopLinkWrapper
-} from './styles/components';
+	TopLinkWrapper,
+} from './styles/headerComponents';
 
 const Header: React.FC = () => {
-	const productsInBox = useSelector(state => state.productsInBox.data);
+	const productsInBox = useSelector((state) => state.productsInBox.data);
 
 	const [user, setUser] = useState(
 		JSON.parse(localStorage.getItem('profile')!)
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 	return (
 		<HeadContainer>
 			<Wrapper>
-				<LinkTo to="/">
+				<LinkTo to='/'>
 					<Tippy content={homeButton}>
 						<Image src={`${process.env.PUBLIC_URL}/assets/logo-text.png`} />
 					</Tippy>
@@ -75,34 +75,30 @@ const Header: React.FC = () => {
 			<Wrapper>
 				<TopLink
 					activeStyle={{
-						color: 'black'
+						color: 'black',
 					}}
-					to="./About"
-				>
+					to='./About'>
 					{t('headerAbout')}
 				</TopLink>
 				<TopLink
 					activeStyle={{
-						color: 'black'
+						color: 'black',
 					}}
-					to="./Gallery"
-				>
+					to='./Gallery'>
 					{t('headerGallery')}
 				</TopLink>
 				<TopLink
 					activeStyle={{
-						color: 'black'
+						color: 'black',
 					}}
-					to="./Faq"
-				>
+					to='./Faq'>
 					{t('headerFaQ')}
 				</TopLink>
 				<TopLink
 					activeStyle={{
-						color: 'black'
+						color: 'black',
 					}}
-					to="./Contacts"
-				>
+					to='./Contacts'>
 					{t('headerContact')}
 				</TopLink>
 
@@ -112,7 +108,7 @@ const Header: React.FC = () => {
 				</TopLinkWrapper>
 			</Wrapper>
 			<Wrapper>
-				<LinkTo to="/Search">
+				<LinkTo to='/Search'>
 					<Tippy content={searchHeaderButton}>
 						<IconWrapper>
 							<IoSearchOutline size={25} />
@@ -120,7 +116,7 @@ const Header: React.FC = () => {
 					</Tippy>
 				</LinkTo>
 				<IconWrapper>{name}</IconWrapper>
-				<LinkTo to="/Auth">
+				<LinkTo to='/Auth'>
 					<Tippy content={logInHeaderButton}>
 						<IconWrapper>
 							{token ? (
@@ -132,7 +128,7 @@ const Header: React.FC = () => {
 					</Tippy>
 				</LinkTo>
 				<Tippy content={shoppingBoxHeaderButton}>
-					<LinkTo to="/Box">
+					<LinkTo to='/Box'>
 						<Wrapper>
 							<BoxIcon src={`${process.env.PUBLIC_URL}/assets/box.png`} />
 							{itemsInBox > 0 && (

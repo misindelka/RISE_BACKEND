@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ContentWrapper, Paper, PageWrapper } from '../../Styles/Components';
+import { ContentWrapper, Paper, PageWrapper } from '../../styles/components';
 import { aboutApi } from '../../api/pagesApis';
 
 const About: React.FC = () => {
@@ -9,7 +9,7 @@ const About: React.FC = () => {
 	useEffect(() => {
 		axios
 			.get(aboutApi)
-			.then(res => {
+			.then((res) => {
 				setData(res.data);
 			})
 			.catch(() => console.log('! abouts not recieved !'));
