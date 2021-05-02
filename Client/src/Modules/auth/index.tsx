@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { signin, signup } from '../../redux/actions/authActions';
+import { signin, signup } from '../../Redux/Actions/authActions';
 import AuthForm from './authForm';
 import { PageWrapper } from '../../styles/components';
 

@@ -13,7 +13,7 @@ import {
 	IoPersonRemoveOutline,
 } from 'react-icons/io5';
 import Tippy from '@tippy.js/react';
-import ShopLink from '../linkComponents/shopLink';
+import ShopLink from '../LinkComponents/shopLink';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tippy.js/dist/tippy.css';
@@ -37,7 +37,7 @@ import {
 } from './styles/headerComponents';
 
 const Header: React.FC = () => {
-	const productsInBox = useSelector((state) => state.productsInBox.data);
+	const productsInBox = useSelector((state: any) => state.productsInBox.data);
 
 	const [user, setUser] = useState(
 		JSON.parse(localStorage.getItem('profile')!)

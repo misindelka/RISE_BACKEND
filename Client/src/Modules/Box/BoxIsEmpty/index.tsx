@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import ShopLink from '../../../linkComponents/shopLink';
+import ShopLink from '../../../LinkComponents/shopLink';
 import { Paper, ContentContainer, NavContainer } from '../styles/boxComponents';
 import { boxIsEmptyLabelSk } from '../../../constants/labels';
 

@@ -2,10 +2,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { countFinalPrice } from '../../../redux/actions/boxActions';
+import { countFinalPrice } from '../../../Redux/Actions/boxActions';
 import { IProductTypes } from '../../../types/types';
-import BoxBar from '../BoxBar';
-import SummaryTable from './SummaryTable';
+import BoxBar from '../boxBar';
+import SummaryTable from './summaryTable';
 import { Paper, ContentWrapper, LinkTo } from '../../../styles/components';
 import { ShopWrapper, NavContainer } from '../../styles/modulesComponents';
 
@@ -18,9 +18,9 @@ interface IProps {
 
 const BoxSummary: React.FC<IProps> = () => {
 	const dispatch = useDispatch();
-	const productsInBox = useSelector((state) => state.productsInBox.data);
-	const finalPrice = useSelector<number>(
-		(state) => state.productsInBox.finalPrice
+	const productsInBox = useSelector((state: any) => state.productsInBox.data);
+	const finalPrice = useSelector(
+		(state: any) => state.productsInBox.finalPrice
 	);
 
 	const { t } = useTranslation();

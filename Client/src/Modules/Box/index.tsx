@@ -7,12 +7,12 @@ import {
 	increaseAmount,
 	decreaseAmount,
 	countFinalPrice,
-} from '../../redux/actions/boxActions';
+} from '../../Redux/Actions/boxActions';
 import { IProductTypes } from '../../types/types';
-import BoxBar from './BoxBar';
-import BoxIsEmpty from './boxIsEmpty/index';
-import ShoppingBox from './shoppingBox/index';
-import ShopLink from '../../linkComponents/shopLink';
+import BoxBar from './boxBar';
+import BoxIsEmpty from './BoxIsEmpty/index';
+import ShoppingBox from './ShoppingBox/index';
+import ShopLink from '../../LinkComponents/shopLink';
 import { Paper, ContentWrapper, LinkTo } from '../../styles/components';
 import { NavContainer, ShopWrapper } from '../styles/modulesComponents';
 import { ShopNavContainer } from './styles/boxComponents';
@@ -25,8 +25,10 @@ interface IProps {
 
 const Box: React.FC<IProps> = () => {
 	const dispatch = useDispatch();
-	const productsInBox = useSelector((state) => state.productsInBox.data);
-	const finalPrice = useSelector((state) => state.productsInBox.finalPrice);
+	const productsInBox = useSelector((state: any) => state.productsInBox.data);
+	const finalPrice = useSelector(
+		(state: any) => state.productsInBox.finalPrice
+	);
 
 	const { t } = useTranslation();
 

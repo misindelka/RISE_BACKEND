@@ -4,16 +4,16 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ProductsBar from './ProductsBar';
-import ProductCard from './cards/productCard';
+import ProductCard from './Cards/productCard';
 import SearchBar from './searchBar';
-import NoProducts from './cards/noProducts';
+import NoProducts from './Cards/noProducts';
 import {
 	ShopWrapper,
 	ProductsWrapper,
 	ContentContainer,
 } from '../styles/modulesComponents';
 import { IProductTypes, TAddToBox } from '../../types/types';
-import { addToBox } from '../../redux/actions/boxActions';
+import { addToBox } from '../../Redux/Actions/boxActions';
 
 interface IProps {
 	product: IProductTypes;
@@ -22,7 +22,7 @@ interface IProps {
 }
 
 const Products: React.FC<IProps> = (props) => {
-	const productsData = useSelector((state) => state.products.data);
+	const productsData = useSelector((state: any) => state.products.data);
 	const [search, setSearch] = useState('');
 	const [sortedProducts, setSortedProducts] = useState<any>();
 

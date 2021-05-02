@@ -8,7 +8,7 @@ const mainImageUrl = BackgroundVegTable;
 // Bar
 
 export const BarWrapper = styled.div`
-	background: ${props => props.theme.modalTransparentGrey};
+	background: ${(props) => props.theme.modalTransparentGrey};
 	display: flex;
 	justify-content: space-around;
 	overflow: scroll;
@@ -21,8 +21,8 @@ export const LinkTo = styled(NavLink)`
 	color: white;
 	cursor: pointer;
 	display: flex;
-	font-size: ${props => props.theme.primaryFontSize};
-	padding: ${props => props.theme.primaryPadding};
+	font-size: ${(props) => props.theme.primaryFontSize};
+	padding: ${(props) => props.theme.primaryPadding};
 	text-decoration: none;
 	:hover {
 		cursor: pointer;
@@ -36,19 +36,19 @@ export const LinkTo = styled(NavLink)`
 // General
 
 export const ContentWrapper = styled.div`
-	margin: ${props => props.theme.primaryPadding};
+	margin: ${(props) => props.theme.primaryPadding};
 `;
 
 export const Paper = styled.div`
-	background: ${props => props.theme.modalTransparentGrey};
-	border-radius: ${props => props.theme.smallPadding};
-	color: ${props => props.theme.primaryBoxShadow};
+	background: ${(props) => props.theme.modalTransparentGrey};
+	border-radius: ${(props) => props.theme.smallPadding};
+	color: ${(props) => props.theme.primaryBoxShadow};
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
 	justify-content: center;
-	margin: ${props => props.theme.sideCardPadding};
-	padding: ${props => props.theme.primaryPadding};
+	margin: ${(props) => props.theme.sideCardPadding};
+	padding: ${(props) => props.theme.primaryPadding};
 `;
 
 export const PageWrapper = styled.div`
@@ -60,7 +60,7 @@ export const PageWrapper = styled.div`
 	height: 100vh;
 	justify-content: start;
 	overflow: scroll;
-	padding: ${props => props.theme.secondaryPadding};
+	padding: ${(props) => props.theme.secondaryPadding};
 `;
 
 export const RowWrapper = styled.div`

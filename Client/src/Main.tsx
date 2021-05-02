@@ -2,20 +2,20 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
-import Footer from './footer';
+import Footer from './Footer';
 import GlobalStyle from './styles/globalStyle';
 import routes from './router';
 
-import Header from './header/index';
-import { getProducts } from './redux/actions/productsActions';
-import Home from './pages/home';
+import Header from './Header/index';
+import { getProducts } from './Redux/Actions/productsActions';
+import Home from './Pages/Home';
 
 const Main = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getProducts());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div>

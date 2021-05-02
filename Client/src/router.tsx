@@ -1,15 +1,15 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import styled from 'styled-components';
-import About from './pages/about/index';
-import Faq from './pages/faq/index';
-import Contacts from './pages/contact/index';
-import Gallery from './pages/gallery/index';
-import Products from './modules/products/index';
-import Box from './modules/box/index';
-import Auth from './modules/auth/index';
-import Summary from './modules/box/summary/index';
-import Order from './modules/box/order/index';
+import About from './Pages/About/index';
+import Faq from './Pages/FAQ/index';
+import Contacts from './Pages/Contact/index';
+import Gallery from './Pages/Gallery/index';
+import Products from './Modules/Products/index';
+import Box from './Modules/Box/index';
+import Auth from './Modules/Auth/index';
+import Summary from './Modules/Box/Summary/index';
+import Order from './Modules/Box/Order/index';
 
 const Placeholder = styled.div`
 	align-items: center;
