@@ -7,7 +7,7 @@
 	"description": "z rise zelelniny ",
 	"author": "misindelka",
 	"scripts": {
-		"start": "nodemon server.js",
+		"start": "node server.js",
 		"server": "nodemon server.js"
 	},
 	"dependencies": {
